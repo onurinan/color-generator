@@ -1,0 +1,12 @@
+.color-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+p {
+  margin: 5px;
+}
