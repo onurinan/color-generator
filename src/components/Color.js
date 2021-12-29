@@ -3,6 +3,7 @@ import "./Color.css";
 
 const Color = ({ color }) => {
   const [showHex, setShowHex] = useState(false);
+
   const handleClick = (e) => {
     e.preventDefault();
 
@@ -12,7 +13,10 @@ const Color = ({ color }) => {
   return (
     <div
       className="color-wrapper"
-      style={{ backgroundColor: `${color.color}` }}
+      style={{
+        backgroundColor: color.color,
+        border: color.id % 2 === 0 ? "2px solid black" : "2px solid white",
+      }}
       onClick={handleClick}
     >
       {color.name}
