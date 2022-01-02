@@ -15,7 +15,7 @@ const Colors = () => {
 
   useEffect(() => {
     try {
-      return fetchData();
+      fetchData();
     } catch (err) {
       console.log(err);
     }
