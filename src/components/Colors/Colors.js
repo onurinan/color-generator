@@ -1,16 +1,16 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Color from "./Color";
+import Color from "../Color/Color";
 import "./Colors.css";
 
 const Colors = () => {
   const [colors, setColors] = useState([]);
 
-  const url = "https://reqres.in/api/products";
+  const url = "https://reqres.in/api/products?per_page=12";
 
   const fetchData = async () => {
-    const res = await axios.get(url);
-    setColors(res.data.data);
+    const colorResponse = await axios.get(url);
+    setColors(colorResponse.data.data);
   };
 
   useEffect(() => {
@@ -24,7 +24,12 @@ const Colors = () => {
   return (
     <div className="wrapper">
       {colors.map((color) => (
-        <Color key={color.id} color={color} />
+        <Color
+          key={color.id}
+          id={color.id}
+          color={color.color}
+          name={color.name}
+        />
       ))}
     </div>
   );

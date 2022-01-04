@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Color.css";
 
-const Color = ({ color }) => {
+const Color = ({ color, name, id }) => {
   const [showHex, setShowHex] = useState(false);
 
   const handleClick = (e) => {
@@ -14,13 +14,13 @@ const Color = ({ color }) => {
     <div
       className="color-wrapper"
       style={{
-        backgroundColor: color.color,
-        border: color.id % 2 === 0 ? "2px solid black" : "2px solid white",
+        backgroundColor: color,
+        border: id % 2 === 0 ? "2px solid black" : "2px solid white",
       }}
       onClick={handleClick}
     >
-      {color.name}
-      {showHex && <p>{color.color}</p>}
+      {name}
+      {showHex && <p>{color}</p>}
     </div>
   );
 };
