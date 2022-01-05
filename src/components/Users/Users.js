@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import User from "../User/User";
 import "./Users.css";
 
 const Users = () => {
@@ -21,12 +22,17 @@ const Users = () => {
   }, []);
 
   return (
-    <div>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.first_name}</li>
-        ))}
-      </ul>
+    <div className="user-wrapper">
+      {users.map((user) => (
+        <User
+          id={user.id}
+          key={user.id}
+          first_name={user.first_name}
+          last_name={user.last_name}
+          avatar={user.avatar}
+          email={user.email}
+        />
+      ))}
     </div>
   );
 };
