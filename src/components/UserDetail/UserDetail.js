@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const UserDetail = () => {
   const [userDetails, setUserDetails] = useState([]);
-  const { id } = useParams;
+  const { id } = useParams();
 
   const { first_name, last_name, email, avatar } = userDetails;
 
@@ -24,8 +24,19 @@ const UserDetail = () => {
   }, []);
 
   return (
-    <div>
-      <h1>{first_name}</h1>
+    <div className="card-wrapper">
+      <img src={avatar} alt="profilephoto" />
+
+      <div className="card-content-wrapper">
+        <h3>{`${first_name} ${last_name}`}</h3>
+
+        <p>{email}</p>
+
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga tenetur
+          amet nulla similique ab quos
+        </p>
+      </div>
     </div>
   );
 };
