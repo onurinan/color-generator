@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./HomePage.css";
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="homepage-wrapper">
       <Link to={`users`}>
         <button>Users</button>
       </Link>

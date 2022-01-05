@@ -1,0 +1,19 @@
+.homepage-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+  font-size: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #e1306c;
+  color: #ffffff;
+}
